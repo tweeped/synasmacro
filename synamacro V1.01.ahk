@@ -1,7 +1,7 @@
 #MaxThreadsPerHotkey 2
 
 ConfigFile := "config.txt"
-SavedHotkey := ""
+SavedHotkey := "c"
 DebounceTime := 10
 MacroVersion := "FirstPerson"
 
@@ -16,8 +16,8 @@ if FileExist(ConfigFile) {
         Else IfInString, A_LoopField, version=
             StringTrimLeft, MacroVersion, A_LoopField, 8
     }
-    if (SavedHotkey = "") {
-        SavedHotkey := "None Set"
+    if (SavedHotkey = "c") {
+        SavedHotkey := "c"
     }
     if (DebounceTime = "") {
         DebounceTime := 10
@@ -28,7 +28,7 @@ if FileExist(ConfigFile) {
 
     MsgBox, Loaded configuration:`nHotkey: %SavedHotkey%`nDebounce Time: %DebounceTime% ms`nMacro Version: %MacroVersion%
 
-    if (SavedHotkey != "None Set") {
+    if (SavedHotkey != "c") {
         Hotkey, %SavedHotkey%, ToggleMacro
     }
 }
@@ -83,7 +83,7 @@ SetHotkey:
 
         GuiControl,, CurrentHotkeyText, % "Current Hotkey: " NewHotkey
         
-        if (SavedHotkey != "None Set") {
+        if (SavedHotkey != "c") {
             Hotkey, %SavedHotkey%, Off
         }
         
