@@ -1,7 +1,7 @@
 #MaxThreadsPerHotkey 2
 
 ConfigFile := "config.txt"
-SavedHotkey := ""
+SavedHotkey := "e"
 DebounceTime := 10
 MacroVersion := "FirstPerson"
 
